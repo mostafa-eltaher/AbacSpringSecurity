@@ -39,6 +39,7 @@ public class SecurityAccessContext {
 	public void setEnvironment(Object environment) {
 		this.environment = environment;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

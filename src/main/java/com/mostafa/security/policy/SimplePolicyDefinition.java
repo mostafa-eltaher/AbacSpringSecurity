@@ -10,7 +10,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PolicyManager {
+public class SimplePolicyDefinition implements PolicyDefinition {
 	private List<PolicyRule> rules;
 	
 	@PostConstruct
@@ -18,12 +18,14 @@ public class PolicyManager {
 		ExpressionParser exp = new SpelExpressionParser();
 		rules = new ArrayList<>();
 		
-		String ownerRule = "subject.name == resource.owner";
-		String targetRule = "true";
-
-		rules.add(new PolicyRule(exp.parseExpression(targetRule), exp.parseExpression(ownerRule)));		
+		PolicyRule newRule = new PolicyRule();
+		newRule.setName("ResourceOwner");
+		newRule.setDescription("Resource owner should have access to it.");
+		newRule.setCondition(exp.parseExpression("true"));
+		newRule.setTarget(exp.parseExpression("subject.name == resource.owner"));
+		rules.add(newRule);
 	}
-	public List<PolicyRule> getAllPolicies() {
+	public List<PolicyRule> getAllPolicyRules() {
 		return rules;
 	}
 
