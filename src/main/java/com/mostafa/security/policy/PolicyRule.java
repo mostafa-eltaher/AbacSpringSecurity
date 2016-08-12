@@ -4,7 +4,7 @@ import org.springframework.expression.Expression;
 
 public class PolicyRule {
 	/*
-	 * Boolean SpEL expression where this policy applied 
+	 * Boolean SpEL expression. If evaluated to true, then this rule is applied to the request access context.
 	 */
 	private Expression  target;
 	
