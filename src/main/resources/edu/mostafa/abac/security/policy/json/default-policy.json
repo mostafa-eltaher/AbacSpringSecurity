@@ -1,0 +1,8 @@
+[
+	{
+		"name": "ResourceOwner",
+		"description": "Resource owner should have access to it.",
+		"target": "true",
+		"condition": "subject.name == resource.owner"
+	}
+]
