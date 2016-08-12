@@ -39,4 +39,46 @@ public class SecurityAccessContext {
 	public void setEnvironment(Object environment) {
 		this.environment = environment;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((action == null) ? 0 : action.hashCode());
+		result = prime * result + ((environment == null) ? 0 : environment.hashCode());
+		result = prime * result + ((resource == null) ? 0 : resource.hashCode());
+		result = prime * result + ((subject == null) ? 0 : subject.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SecurityAccessContext other = (SecurityAccessContext) obj;
+		if (action == null) {
+			if (other.action != null)
+				return false;
+		} else if (!action.equals(other.action))
+			return false;
+		if (environment == null) {
+			if (other.environment != null)
+				return false;
+		} else if (!environment.equals(other.environment))
+			return false;
+		if (resource == null) {
+			if (other.resource != null)
+				return false;
+		} else if (!resource.equals(other.resource))
+			return false;
+		if (subject == null) {
+			if (other.subject != null)
+				return false;
+		} else if (!subject.equals(other.subject))
+			return false;
+		return true;
+	}
 }
