@@ -1,4 +1,4 @@
-package com.mostafa.security.controllers;
+package edu.mostafa.abac.web.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;

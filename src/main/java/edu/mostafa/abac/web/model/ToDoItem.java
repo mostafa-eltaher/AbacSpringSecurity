@@ -1,4 +1,4 @@
-package com.mostafa.security.model;
+package edu.mostafa.abac.web.model;
 
 public class ToDoItem {
 	private Long id;

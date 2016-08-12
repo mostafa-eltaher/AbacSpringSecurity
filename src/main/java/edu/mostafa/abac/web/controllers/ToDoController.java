@@ -1,4 +1,4 @@
-package com.mostafa.security.controllers;
+package edu.mostafa.abac.web.controllers;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mostafa.security.model.ToDoItem;
-import com.mostafa.security.services.ToDoService;
+import edu.mostafa.abac.web.model.ToDoItem;
+import edu.mostafa.abac.web.services.ToDoService;
 
 @RestController
 @RequestMapping("/todo")

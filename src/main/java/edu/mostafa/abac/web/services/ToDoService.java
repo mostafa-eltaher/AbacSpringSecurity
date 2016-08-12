@@ -1,8 +1,8 @@
-package com.mostafa.security.services;
+package edu.mostafa.abac.web.services;
 
 import java.util.List;
 
-import com.mostafa.security.model.ToDoItem;
+import edu.mostafa.abac.web.model.ToDoItem;
 
 public interface ToDoService {
 	public List<ToDoItem> getToDos();

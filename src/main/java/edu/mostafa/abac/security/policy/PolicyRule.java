@@ -1,4 +1,4 @@
-package com.mostafa.security.policy;
+package edu.mostafa.abac.security.policy;
 
 import org.springframework.expression.Expression;
 

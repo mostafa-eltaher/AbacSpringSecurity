@@ -1,4 +1,4 @@
-package com.mostafa.security.spring.config;
+package edu.mostafa.abac.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler;
@@ -6,7 +6,7 @@ import org.springframework.security.access.expression.method.MethodSecurityExpre
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
 
-import com.mostafa.security.spring.AbacPermissionEvaluator;
+import edu.mostafa.abac.security.spring.AbacPermissionEvaluator;
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MethodSecurityConfig extends GlobalMethodSecurityConfiguration {

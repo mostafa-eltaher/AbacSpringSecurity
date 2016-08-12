@@ -1,4 +1,4 @@
-package com.mostafa.security.spring;
+package edu.mostafa.abac.security.spring;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import com.mostafa.security.policy.PolicyEnforcement;
+import edu.mostafa.abac.security.policy.PolicyEnforcement;
 
 @Component
 public class AbacPermissionEvaluator implements PermissionEvaluator {

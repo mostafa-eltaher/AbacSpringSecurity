@@ -1,4 +1,4 @@
-package com.mostafa.security.spring.config;
+package edu.mostafa.abac.config;
 
 import java.io.IOException;
 

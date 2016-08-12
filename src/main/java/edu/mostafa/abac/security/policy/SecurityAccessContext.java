@@ -1,4 +1,4 @@
-package com.mostafa.security.policy;
+package edu.mostafa.abac.security.policy;
 
 public class SecurityAccessContext {
 	private Object subject;

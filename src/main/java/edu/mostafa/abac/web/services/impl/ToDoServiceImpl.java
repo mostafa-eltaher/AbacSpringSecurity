@@ -1,12 +1,12 @@
-package com.mostafa.security.services.impl;
+package edu.mostafa.abac.web.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.mostafa.security.model.ToDoItem;
-import com.mostafa.security.services.ToDoService;
+import edu.mostafa.abac.web.model.ToDoItem;
+import edu.mostafa.abac.web.services.ToDoService;
 
 @Component
 public class ToDoServiceImpl implements ToDoService {

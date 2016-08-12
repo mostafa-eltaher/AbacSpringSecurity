@@ -1,4 +1,4 @@
-package com.mostafa.security.spring.config;
+package edu.mostafa.abac.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan("com.mostafa.security")
+@ComponentScan("edu.mostafa.abac")
 @EnableWebMvc
 @EnableWebSecurity
 public class RootConfiguration  extends WebSecurityConfigurerAdapter {

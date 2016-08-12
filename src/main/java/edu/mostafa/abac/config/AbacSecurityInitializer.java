@@ -1,4 +1,4 @@
-package com.mostafa.security.spring.config;
+package edu.mostafa.abac.config;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
