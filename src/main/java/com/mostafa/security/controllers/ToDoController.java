@@ -25,7 +25,7 @@ public class ToDoController {
 	@Autowired
 	ToDoService toDoService;
 	
-	@RequestMapping(value = "", method = RequestMethod.GET, produces = { "application/json" })
+	@RequestMapping(value = "", method = RequestMethod.GET, produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<ToDoItem> getToDos() {
@@ -35,11 +35,11 @@ public class ToDoController {
 		return result;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = { "application/json" })
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	@PostAuthorize("hasPermission(returnObject,'VIEW_TODO')")
-	public  ToDoItem getToDo(@PathVariable("id") Long id) {
+	public ToDoItem getToDo(@PathVariable("id") Long id) {
 		log.info("[getToDo] started ...");
 		ToDoItem result = toDoService.getToDo(id);
 		log.info("[getToDo] done,  result: " + result);
