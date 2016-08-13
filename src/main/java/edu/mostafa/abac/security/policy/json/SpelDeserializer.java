@@ -12,6 +12,8 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
 public class SpelDeserializer extends StdDeserializer<Expression> {
+	private static final long serialVersionUID = -3756824333350261220L;
+	
 	ExpressionParser elParser = new SpelExpressionParser();
 	
 	public SpelDeserializer(){

@@ -3,6 +3,7 @@ package edu.mostafa.abac.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @ComponentScan("edu.mostafa.abac")
+@PropertySource(value="classpath:application.properties")
 @EnableWebMvc
 @EnableWebSecurity
 public class RootConfiguration  extends WebSecurityConfigurerAdapter {
