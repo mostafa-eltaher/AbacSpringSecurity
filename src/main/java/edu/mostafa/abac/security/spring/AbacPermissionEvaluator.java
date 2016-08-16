@@ -18,6 +18,7 @@ import edu.mostafa.abac.security.policy.PolicyEnforcement;
 @Component
 public class AbacPermissionEvaluator implements PermissionEvaluator {
 	private static Logger logger = LoggerFactory.getLogger(AbacPermissionEvaluator.class);
+	
 	@Autowired
 	PolicyEnforcement policy;
 

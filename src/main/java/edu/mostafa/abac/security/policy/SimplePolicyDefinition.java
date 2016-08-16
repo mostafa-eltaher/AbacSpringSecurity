@@ -9,7 +9,7 @@ import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component("simplePolicyDefinition")
 public class SimplePolicyDefinition implements PolicyDefinition {
 	private List<PolicyRule> rules;
 	

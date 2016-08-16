@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import edu.mostafa.abac.security.policy.PolicyDefinition;
 import edu.mostafa.abac.security.policy.PolicyRule;
 
-@Component
+@Component("jsonFilePolicyDefinition")
 public class JsonFilePolicyDefinition implements PolicyDefinition {
 	private static Logger logger = LoggerFactory.getLogger(JsonFilePolicyDefinition.class);
 	
