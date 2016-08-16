@@ -18,6 +18,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class RootConfiguration  extends WebSecurityConfigurerAdapter {
 	@Autowired
 	HttpAuthenticationEntryPoint entryPoint;
+	@Autowired
+	InMemoryUserDetailsService usersSvc;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -27,14 +29,12 @@ public class RootConfiguration  extends WebSecurityConfigurerAdapter {
 					.and()
 				.httpBasic()
 			.authenticationEntryPoint(entryPoint);
+		
+		http.csrf().disable();
 	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-		.withUser("user").password("password").roles("USER").and()
-		.withUser("admin").password("password").roles("USER", "ADMIN").and()
-		.withUser("mostafa").password("password").roles("USER", "ADMIN");
-
+		auth.userDetailsService(usersSvc);
 	}	
 }

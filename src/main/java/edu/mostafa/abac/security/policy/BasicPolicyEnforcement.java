@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BasicPolicyEnforcement implements PolicyEnforcement {
-	private static Logger logger = LoggerFactory.getLogger(BasicPolicyEnforcement.class);
+	private static final Logger logger = LoggerFactory.getLogger(BasicPolicyEnforcement.class);
 	
 	@Autowired
 	private PolicyDefinition policyDefinition;
@@ -20,11 +20,11 @@ public class BasicPolicyEnforcement implements PolicyEnforcement {
 	 * @see edu.mostafa.abac.security.policy.PolicyEnforcement#check(java.lang.Object, java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public boolean check(Object subject, Object resource, Object action) {
+	public boolean check(Object subject, Object resource, Object action, Object environment) {
 		//Get all policy rules
 		List<PolicyRule> allRules = policyDefinition.getAllPolicyRules();
 		//Wrap the context
-		SecurityAccessContext cxt = new SecurityAccessContext(subject, resource, action, null);
+		SecurityAccessContext cxt = new SecurityAccessContext(subject, resource, action, environment);
 		//Filter the rules according to context.
 		List<PolicyRule> matchedRules = filterRules(allRules, cxt);
 		//finally, check if any of the rules are satisfied, otherwise return false.

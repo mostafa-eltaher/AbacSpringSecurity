@@ -1,0 +1,361 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AbacSpringSecurity",
+		"_postman_id": "5416989b-e520-5741-f591-95d1ff70dee1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Project - Add",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46cGFzc3dvcmQ=",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"FirstProject\",\r\n    \"description\": \"The first project\"\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Project - List",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46cGFzc3dvcmQ=",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"FirstProject\",\r\n    \"description\": \"The first project\"\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Assign PM",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/pm/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46cGFzc3dvcmQ=",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "pm1"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Assign Developer",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/users/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"dev1\",\r\n\t\"role\": \"DEVELOPER\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Assign Tester",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/users/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"test1\",\r\n\t\"role\": \"TESTER\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Project - List Users",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/users/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Delete User",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/users/dev1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Project - View",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"FirstProject\",\r\n    \"description\": \"The first project\"\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Delete",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46cGFzc3dvcmQ=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Issues - List ",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Issues - Create",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"type\": \"TASK\",\r\n\t\"name\": \"Task1\",\r\n\t\"description\": \"First task\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Issues - Update",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/1/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"type\": \"TASK\",\r\n\t\"name\": \"Task1\",\r\n\t\"description\": \"First task, after update\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Issues - Delete",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/1/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Issues - Assign",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/1/assignee",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "dev1"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Issues - Change Status",
+			"request": {
+				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/1/status",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic cG0xOnBhc3N3b3Jk",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "COMPLETED"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

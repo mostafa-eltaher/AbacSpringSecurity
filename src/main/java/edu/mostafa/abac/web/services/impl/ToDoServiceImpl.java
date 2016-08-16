@@ -13,11 +13,11 @@ public class ToDoServiceImpl implements ToDoService {
 	private List<ToDoItem> items = new ArrayList<ToDoItem>(5);
 	
 	public ToDoServiceImpl() {
-		items.add(new ToDoItem(1l, "Item 1", "mostafa"));
-		items.add(new ToDoItem(2l, "Item 2", "mostafa"));
-		items.add(new ToDoItem(3l, "Item 3", "mostafa"));
-		items.add(new ToDoItem(4l, "Item 4", "mostafa"));
-		items.add(new ToDoItem(5l, "Item 5", "mostafa"));
+		items.add(new ToDoItem(1l, "Item 1", "dev1"));
+		items.add(new ToDoItem(2l, "Item 2", "dev2"));
+		items.add(new ToDoItem(3l, "Item 3", "pm1"));
+		items.add(new ToDoItem(4l, "Item 4", "pm2"));
+		items.add(new ToDoItem(5l, "Item 5", "admin"));
 	}
 
 	@Override
