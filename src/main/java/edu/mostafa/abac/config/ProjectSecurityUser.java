@@ -10,6 +10,8 @@ import edu.mostafa.abac.web.model.ProjectUser;
 import edu.mostafa.abac.web.model.UserRole;
 
 public class ProjectSecurityUser extends User implements ProjectUser {
+	private static final long serialVersionUID = 8498233196842987555L;
+	
 	private Project project;
 	private UserRole role;
 
