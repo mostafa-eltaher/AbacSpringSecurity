@@ -10,7 +10,7 @@
 		{
 			"name": "Project - Add",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/",
 				"method": "POST",
 				"header": [
 					{
@@ -35,7 +35,7 @@
 		{
 			"name": "Project - List",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/",
 				"method": "GET",
 				"header": [
 					{
@@ -60,7 +60,7 @@
 		{
 			"name": "Project - Assign PM",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/pm/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/pm/",
 				"method": "PUT",
 				"header": [
 					{
@@ -85,7 +85,7 @@
 		{
 			"name": "Project - Assign Developer",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/users/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/users/",
 				"method": "POST",
 				"header": [
 					{
@@ -110,7 +110,7 @@
 		{
 			"name": "Project - Assign Tester",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/users/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/users/",
 				"method": "POST",
 				"header": [
 					{
@@ -135,7 +135,7 @@
 		{
 			"name": "Project - List Users",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/users/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/users/",
 				"method": "GET",
 				"header": [
 					{
@@ -155,7 +155,7 @@
 		{
 			"name": "Project - Delete User",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/users/dev1",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/users/dev1",
 				"method": "DELETE",
 				"header": [
 					{
@@ -175,7 +175,7 @@
 		{
 			"name": "Project - View",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/",
 				"method": "GET",
 				"header": [
 					{
@@ -200,7 +200,7 @@
 		{
 			"name": "Project - Delete",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/",
 				"method": "DELETE",
 				"header": [
 					{
@@ -220,7 +220,7 @@
 		{
 			"name": "Issues - List ",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/issues/",
 				"method": "GET",
 				"header": [
 					{
@@ -240,7 +240,7 @@
 		{
 			"name": "Issues - Create",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/issues/",
 				"method": "POST",
 				"header": [
 					{
@@ -265,7 +265,7 @@
 		{
 			"name": "Issues - Update",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/1/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/issues/1/",
 				"method": "PUT",
 				"header": [
 					{
@@ -290,7 +290,7 @@
 		{
 			"name": "Issues - Delete",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/1/",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/issues/1/",
 				"method": "DELETE",
 				"header": [
 					{
@@ -310,7 +310,7 @@
 		{
 			"name": "Issues - Assign",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/1/assignee",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/issues/1/assignee",
 				"method": "PUT",
 				"header": [
 					{
@@ -335,7 +335,7 @@
 		{
 			"name": "Issues - Change Status",
 			"request": {
-				"url": "http://localhost:8080/AbacSpringSecurity/projects/1/issues/1/status",
+				"url": "http://localhost:8080/sample-issue-tracker/projects/1/issues/1/status",
 				"method": "PUT",
 				"header": [
 					{

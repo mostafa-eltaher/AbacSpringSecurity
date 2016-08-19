@@ -6,8 +6,6 @@ public class SecurityAccessContext {
 	private Object action;
 	private Object environment;
 	
-	
-	
 	public SecurityAccessContext(Object subject, Object resource, Object action, Object environment) {
 		super();
 		this.subject = subject;

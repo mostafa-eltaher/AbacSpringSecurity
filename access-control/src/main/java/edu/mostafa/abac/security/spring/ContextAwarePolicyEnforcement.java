@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 
 import edu.mostafa.abac.security.policy.PolicyEnforcement;
@@ -26,12 +25,15 @@ public class ContextAwarePolicyEnforcement {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
 		Map<String, Object> environment = new HashMap<>();
+		
+		/*
 		Object authDetails = auth.getDetails();
 		if(authDetails != null) {
 			if(authDetails instanceof WebAuthenticationDetails) {
 				environment.put("remoteAddress", ((WebAuthenticationDetails) authDetails).getRemoteAddress());
 			}
 		}
+		*/
 		environment.put("time", new Date());
 		
 		if(!policy.check(auth.getPrincipal(), resource, permission, environment))
