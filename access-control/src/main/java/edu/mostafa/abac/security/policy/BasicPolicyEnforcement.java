@@ -37,7 +37,7 @@ public class BasicPolicyEnforcement implements PolicyEnforcement {
 		List<PolicyRule> matchedRules = new ArrayList<>();
 		for(PolicyRule rule : allRules) {
 			try {
-				if(rule.getTarget().getValue(cxt, Boolean.class)) {
+				if(Boolean.TRUE.equals(rule.getTarget().getValue(cxt, Boolean.class))) {
 					matchedRules.add(rule);
 				}
 			} catch(EvaluationException ex) {
@@ -50,7 +50,7 @@ public class BasicPolicyEnforcement implements PolicyEnforcement {
 	private boolean checkRules(List<PolicyRule> matchedRules, SecurityAccessContext cxt) {
 		for(PolicyRule rule : matchedRules) {
 			try {
-				if(rule.getCondition().getValue(cxt, Boolean.class)) {
+				if(Boolean.TRUE.equals(rule.getCondition().getValue(cxt, Boolean.class))) {
 					return true;
 				}
 			} catch(EvaluationException ex) {

@@ -6,10 +6,16 @@
 		"condition": "true"
 	},
 	{
-		"name": "PM view his project",
+		"name": "Owner or PM view his project",
 		"description": "PM read the details of his project only.",
 		"target": "subject.role.name() == 'PM' && action == 'PROJECTS_VIEW'",
-		"condition": "subject.project.id == resource.id"
+		"condition": "subject.project.id == resource.id || subject.name == resource.owner"
+	},
+	{
+		"name": "PM lists his projects",
+		"description": "PM read the details of his project only.",
+		"target": "subject.role.name() == 'PM' && action == 'PROJECTS_LIST'",
+		"condition": "true"
 	},
 	{
 		"name": "PM view his project's issues",

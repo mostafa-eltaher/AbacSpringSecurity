@@ -11,28 +11,6 @@ public class Issue {
 	private String createdBy;
 	private String assignedTo;
 	private IssueStatus status;
-	
-	public Issue() {
-		super();
-	}
-	
-	public Issue(Integer id) {
-		super();
-		this.id = id;
-	}
-
-	public Issue(Integer id, Project project, IssueType type, String name, String description, String createdBy,
-			String assignedTo, IssueStatus status) {
-		super();
-		this.id = id;
-		this.project = project;
-		this.type = type;
-		this.name = name;
-		this.description = description;
-		this.createdBy = createdBy;
-		this.assignedTo = assignedTo;
-		this.status = status;
-	}
 
 	public Integer getId() {
 		return id;

@@ -1,14 +1,17 @@
 package edu.mostafa.abac.web.services;
 
+import edu.mostafa.abac.web.model.Issue;
+
 import java.util.List;
 
-import edu.mostafa.abac.web.model.Issue;
-import edu.mostafa.abac.web.model.Project;
-
 public interface IssueService {
-	public List<Issue> getIssues(Project project);
-	public Issue getIssue(Integer id);
-	public void createIssue(Issue issue);
-	public void updateIssue(Issue issue);
-	public void deleteIssue(Issue issue);
+    List<Issue> getIssues(Integer projectId);
+
+    Issue getIssue(Integer id);
+
+    void createIssue(Issue issue);
+
+    void updateIssue(Issue issue);
+
+    void deleteIssue(Integer issueId);
 }

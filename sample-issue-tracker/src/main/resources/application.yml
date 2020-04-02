@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: Abac protected API
+
+
+policy:
+  json:
+    filePath: /some/file/goes/here
+server:
+  servlet:
+    context-path: /sample-issue-tracker

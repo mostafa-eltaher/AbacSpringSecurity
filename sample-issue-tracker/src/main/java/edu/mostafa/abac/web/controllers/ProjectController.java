@@ -1,7 +1,9 @@
 package edu.mostafa.abac.web.controllers;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,12 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import edu.mostafa.abac.security.spring.ContextAwarePolicyEnforcement;
 import edu.mostafa.abac.web.model.BasicProjectUser;
@@ -38,17 +35,18 @@ public class ProjectController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces = {"application/json"})
+	@GetMapping(value = "/", produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	@PreAuthorize("hasPermission(null,'PROJECTS_LIST')")
 	public List<Project> listProjects() {
 		logger.info("[ListProjects] started ...");
-		List<Project> result = projectsService.getProjects();
-		logger.info("[ListProjects] done, result: {} projects", result == null? null : result.size());
+		List<Project> result = projectsService.getProjects().stream().filter(p ->
+				policy.hasAccess(p,"PROJECTS_VIEW")).collect(Collectors.toList());
+		logger.info("[ListProjects] done, result: {} projects", result.size());
 		return result;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = {"application/json"})
+	@GetMapping(value = "/{id}", produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	@PostAuthorize("hasPermission(returnObject,'PROJECTS_VIEW')")
 	public Project getProject(@PathVariable Integer id) {
@@ -58,16 +56,17 @@ public class ProjectController {
 		return result;
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.POST, consumes={"application/json"}, produces = {"application/json"})
-	@ResponseStatus(HttpStatus.OK)
+	@PostMapping(value = "/", consumes={"application/json"}, produces = {"application/json"})
+	@ResponseStatus(HttpStatus.CREATED)
 	@PreAuthorize("hasPermission(null,'PROJECTS_CREATE')")
 	public void createProject(@RequestBody Project project) {
 		logger.info("[createProject({})] started ...", project);
+		project.setOwner(userService.getCurrentUsername());
 		projectsService.createProject(project);
 		logger.info("[createProject({})] done.", project);
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes={"application/json"}, produces = {"application/json"})
+	@PutMapping(value = "/{id}", consumes={"application/json"}, produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	public void updateProject(@PathVariable Integer id, @RequestBody Project project) {
 		logger.info("[updateProject({}, {})] started ...", id, project);
@@ -91,7 +90,7 @@ public class ProjectController {
 	
 
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = {"application/json"})
+	@DeleteMapping(value = "/{id}", produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	public void deleteProject(@PathVariable Integer id) {
 		logger.info("[deleteProject({})] started ...", id);
@@ -107,7 +106,7 @@ public class ProjectController {
 		logger.info("[deleteProject({})] done.", id);
 	}
 	
-	@RequestMapping(value = "/{id}/pm/", method = RequestMethod.PUT, consumes= {"text/plain"} , produces = {"application/json"})
+	@PutMapping(value = "/{id}/pm/", consumes= {"text/plain"} , produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	public void updateProjectManager(@PathVariable Integer id, @RequestBody String newManagerName) {
 		logger.info("[updateProjectManager({}, {})] started ...", id, newManagerName);
@@ -129,14 +128,14 @@ public class ProjectController {
 		logger.info("[updateProjectManager({}, {})] done.", id, newManagerName);
 	}
 	
-	@RequestMapping(value = "/{id}/users/", method = RequestMethod.GET, produces = {"application/json"})
+	@GetMapping(value = "/{id}/users/", produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	public List<BasicProjectUser> listProjectUsers(@PathVariable Integer id) {
 		logger.info("[listProjectUsers({})] started ...", id);
 		Project existingProject = projectsService.getProject(id);
 		if(existingProject == null) {
 			logger.info("[listProjectUsers({})] ignored, non-existing project.", id);
-			return null;
+			return Collections.emptyList();
 		}
 		
 		policy.checkPermission(existingProject, "PROJECTS_USERS_LIST");
@@ -144,17 +143,14 @@ public class ProjectController {
 		
 		List<BasicProjectUser> result = new LinkedList<>();
 		List<ProjectUser> existingUsers = userService.findUserByProject(id);
-		if(existingUsers != null) {
-			for(ProjectUser user : existingUsers) {
-				result.add(new BasicProjectUser(user.getName(), user.getRole()));
-			}
-		}
+		existingUsers.stream().map(user -> new BasicProjectUser(user.getName(), user.getRole())).forEach(result::add);
 		logger.info("[listProjectUsers({})] done, result: {} users.", id, result.size());
 		return result;
 	}
 	
-	@RequestMapping(value = "/{id}/users/", method = RequestMethod.POST, consumes= {"application/json"}, produces = {"application/json"})
-	@ResponseStatus(HttpStatus.OK)
+	@PostMapping(value = "/{id}/users/", consumes= {"application/json"}, produces = {"application" +
+			"/json"})
+	@ResponseStatus(HttpStatus.CREATED)
 	public void addProjectUser(@PathVariable Integer id, @RequestBody BasicProjectUser user) {
 		logger.info("[addProjectUser({}, {})] started ...", id, user);
 		Project existingProject = projectsService.getProject(id);
@@ -187,7 +183,7 @@ public class ProjectController {
 		logger.info("[addProjectUser({}, {})] done.", id, user);
 	}
 	
-	@RequestMapping(value = "/{id}/users/{userName}", method = RequestMethod.DELETE, produces = {"application/json"})
+	@DeleteMapping(value = "/{id}/users/{userName}", produces = {"application/json"})
 	@ResponseStatus(HttpStatus.OK)
 	public void removeProjectUser(@PathVariable Integer id, @PathVariable String userName) {
 		logger.info("[removeProjectUser({}, {})] started ...", id, userName);

@@ -1,5 +1,5 @@
-# AbacSpringSecurity
-Attribute-Based Access Control with Spring Security
+# Abac Spring Security
+Attribute-Based Access Control with Spring Security with Spring Boot example
 
 For more details, check [The DZone article](https://dzone.com/articles/simple-attribute-based-access-control-with-spring)
 
@@ -11,9 +11,11 @@ mvn clean install
 ```
 # Sample Application
 ## How to deploy and run
-- Copy *sample-issue-tracker/target/sample-issue-tracker.war* to your tomcat *webapps* folder
--  Start tomcat
-
+- Run AbacApplication from IDE or from terminal:
+```shel
+    cd sample-issue-tracker/
+    mvn spring-boot:run
+```
 ## How to test
 - Add new project using **POST /sample-issue-tracker/projects/**
 - Assign PM to the project using **PUT /sample-issue-tracker/projects/{project_id}/pm/**
