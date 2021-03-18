@@ -10,7 +10,7 @@
 	<parent>
         <groupId>com.gringostar</groupId>
 		<artifactId>abac-spring-parent</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2-SNAPSHOT</version>
     </parent>
 
 	<dependencies>
@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>com.gringostar</groupId>
 			<artifactId>abac-access-control</artifactId>
-			<version>0.0.1</version>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
