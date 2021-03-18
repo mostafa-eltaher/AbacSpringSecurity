@@ -26,6 +26,19 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>15</java.version>
 	</properties>
+	
+	<scm>
+		<developerConnection>scm:git:https://github.com/gringostar/abac-spring-security.git</developerConnection>
+	</scm>
+	
+	<distributionManagement>
+		<repository>
+		  <id>github</id>
+		  <name>GitHub gringostar Apache Maven Packages</name>
+		  <url>https://maven.pkg.github.com/gringostar/abac-spring-security</url>
+		</repository>
+	 </distributionManagement>
+	 
 	<build>
 		<plugins>
 			<plugin>
