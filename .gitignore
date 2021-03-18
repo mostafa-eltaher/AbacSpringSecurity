@@ -25,3 +25,4 @@ application.properties
 
 # VS Code
 .vscode
+.factorypath

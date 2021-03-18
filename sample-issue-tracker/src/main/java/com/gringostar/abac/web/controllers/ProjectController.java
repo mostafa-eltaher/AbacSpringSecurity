@@ -13,7 +13,7 @@ import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.gringostar.abac.security.spring.ContextAwarePolicyEnforcement;
+import com.gringostar.abac.security.spring.ContextAwarePolicyEnforcer;
 import com.gringostar.abac.web.model.BasicProjectUser;
 import com.gringostar.abac.web.model.Project;
 import com.gringostar.abac.web.model.ProjectUser;
@@ -27,7 +27,7 @@ public class ProjectController {
 	private static final Logger logger = LoggerFactory.getLogger(ProjectController.class);
 	
 	@Autowired
-	private ContextAwarePolicyEnforcement policy;
+	private ContextAwarePolicyEnforcer policy;
 	
 	@Autowired
 	private ProjectService projectsService;
