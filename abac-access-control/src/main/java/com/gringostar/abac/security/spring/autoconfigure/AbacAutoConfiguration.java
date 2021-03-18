@@ -5,6 +5,7 @@ import com.gringostar.abac.security.policy.PolicyDefinition;
 import com.gringostar.abac.security.policy.PolicyEnforcer;
 import com.gringostar.abac.security.policy.json.JsonFilePolicyDefinition;
 import com.gringostar.abac.security.spring.AbacPermissionEvaluator;
+import com.gringostar.abac.security.spring.ContextAwarePolicyEnforcer;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +26,13 @@ public class AbacAutoConfiguration extends GlobalMethodSecurityConfiguration {
     @Override
     protected MethodSecurityExpressionHandler createExpressionHandler() {
         DefaultMethodSecurityExpressionHandler result = new DefaultMethodSecurityExpressionHandler();
-        result.setPermissionEvaluator(abacPermissionEvaluator(policyEnforcer(policyDefinition())));
+        result.setPermissionEvaluator(abacPermissionEvaluator());
         return result;
+    }
+
+    @Bean
+    public ContextAwarePolicyEnforcer contextAwarePolicyEnforcer() {
+        return new ContextAwarePolicyEnforcer(abacPermissionEvaluator());
     }
 
     @Bean
@@ -40,8 +46,8 @@ public class AbacAutoConfiguration extends GlobalMethodSecurityConfiguration {
     }
 
     @Bean
-    public AbacPermissionEvaluator abacPermissionEvaluator(PolicyEnforcer policyEnforcement) {
-        return new AbacPermissionEvaluator(policyEnforcement);
+    public AbacPermissionEvaluator abacPermissionEvaluator() {
+        return new AbacPermissionEvaluator(policyEnforcer(policyDefinition()));
     }
 
     public AbacAutoConfiguration(AbacConfigurationProperties properties) {

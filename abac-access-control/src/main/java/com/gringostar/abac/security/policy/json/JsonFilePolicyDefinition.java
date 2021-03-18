@@ -34,7 +34,6 @@ public class JsonFilePolicyDefinition implements PolicyDefinition {
                 logger.debug("[init] Checking policy file: {}", policyFilePath);
                 File file = new ClassPathResource(policyFilePath).getFile();
                 logger.info("[init] Loading policy from custom file: {}", policyFilePath);
-                logger.debug(file.toString());
                 this.rules
                         .addAll(Arrays.stream(mapper.readValue(file, PolicyRule[].class)).collect(Collectors.toList()));
                 logger.debug("[init] Policy loaded successfully, {} rules loaded.", rules.size());

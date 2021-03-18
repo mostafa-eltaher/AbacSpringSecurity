@@ -32,7 +32,7 @@ public class AbacPermissionEvaluator implements PermissionEvaluator {
 		*/
 		environment.put("time", new Date());
 		boolean result = policyEnforcer.check(user, targetDomainObject, permission, environment);
-		logger.debug("hasPersmission({}, {}, {}) = {}", user, targetDomainObject, permission, result);
+		logger.debug("hasPermission({}, {}, {}) = {}", user, targetDomainObject, permission, result);
 		return result;
 	}
 

@@ -1,6 +1,6 @@
 package com.gringostar.abac.web.controllers;
 
-import com.gringostar.abac.security.spring.ContextAwarePolicyEnforcement;
+import com.gringostar.abac.security.spring.ContextAwarePolicyEnforcer;
 import com.gringostar.abac.web.model.Issue;
 import com.gringostar.abac.web.model.IssueStatus;
 import com.gringostar.abac.web.model.Project;
@@ -32,7 +32,7 @@ public class IssuesController {
     private UserService userService;
 
     @Autowired
-    private ContextAwarePolicyEnforcement policy;
+    private ContextAwarePolicyEnforcer policy;
 
     @GetMapping(value = "/", produces = {"application/json"})
     @ResponseStatus(HttpStatus.OK)

@@ -12,13 +12,6 @@ public class BasicPolicyEnforcer implements PolicyEnforcer {
 
 	private final PolicyDefinition policyDefinition;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.gringostar.abac.security.policy.PolicyEnforcer#check(java.lang.Object,
-	 * java.lang.Object, java.lang.Object)
-	 */
 	@Override
 	public boolean check(Object subject, Object resource, Object action, Object environment) {
 		// Get all policy rules
