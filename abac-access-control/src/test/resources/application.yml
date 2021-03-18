@@ -1,0 +1,4 @@
+security:
+    abac:
+        policy-files:
+            - /some/path/policy.json

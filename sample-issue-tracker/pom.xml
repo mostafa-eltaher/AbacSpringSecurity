@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>sample-issue-tracker</artifactId>
 
-	<name>abac-spring-sample-application</name>
-	<url>https://github.com/mostafa8eltaher/AbacSpringSecurity</url>
+	<name>Atrribute based access control for Spring</name>
+	<url>https://github.com/gringostar/AbacSpringSecurity</url>
 
 	<packaging>war</packaging>
 
 	<parent>
-        <groupId>edu.mostafa.security</groupId>
-		<artifactId>abac-spring-security-parent</artifactId>
+        <groupId>com.gringostar</groupId>
+		<artifactId>abac-spring-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -27,7 +27,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${org.springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -37,9 +36,14 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>edu.mostafa.security</groupId>
-			<artifactId>access-control</artifactId>
+			<groupId>com.gringostar</groupId>
+			<artifactId>abac-access-control</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok</artifactId>
 		</dependency>
 
 	</dependencies>
@@ -51,8 +55,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.5.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>15</source>
+					<target>15</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -61,7 +65,7 @@
 				<executions>
 					<execution>
 						<configuration>
-							<mainClass>edu.mostafa.abac.AbacApplication</mainClass>
+							<mainClass>com.gringostar.AbacApplication</mainClass>
 						</configuration>
 					</execution>
 				</executions>
