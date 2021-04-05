@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.gringostar</groupId>
 	<artifactId>abac-spring-parent</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 
 
 	<parent>
@@ -28,7 +28,7 @@
 	
 	<scm>
 		<developerConnection>scm:git:https://github.com/gringostar/abac-spring-security.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>abac-spring-parent-0.0.2</tag>
   </scm>
 	
 	<distributionManagement>

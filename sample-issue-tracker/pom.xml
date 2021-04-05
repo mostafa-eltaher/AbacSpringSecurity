@@ -10,7 +10,7 @@
 	<parent>
         <groupId>com.github.gringostar</groupId>
 		<artifactId>abac-spring-parent</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.2</version>
     </parent>
 
 	<dependencies>
@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>com.github.gringostar</groupId>
 			<artifactId>abac-access-control</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
+			<version>0.0.2</version>
 		</dependency>
 
 		<dependency>
