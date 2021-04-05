@@ -34,4 +34,4 @@ The sample application uses HTTP Basic Authentication and blow are the users tha
 - test1/password
 - test2/password
 
-All users can be found and modified in **com.gringostar.abac.config.InMemoryUserDetailsService** class.
+All users can be found and modified in **com.github.gringostar.abac.config.InMemoryUserDetailsService** class.

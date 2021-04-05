@@ -2,7 +2,7 @@
     "properties": [
         {
             "name": "security.abac.policy-files",
-            "sourceType": "com.gringostar.abac.security.spring.autoconfigure.AbacConfigurationProperties",
+            "sourceType": "com.github.gringostar.abac.security.spring.autoconfigure.AbacConfigurationProperties",
             "defaultValue": [
                 "/abac/security/policy/json/default-policy.json"
             ]

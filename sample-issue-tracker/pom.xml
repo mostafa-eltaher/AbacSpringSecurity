@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 
 	<parent>
-        <groupId>com.gringostar</groupId>
+        <groupId>com.github.gringostar</groupId>
 		<artifactId>abac-spring-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -36,7 +36,7 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>com.gringostar</groupId>
+			<groupId>com.github.gringostar</groupId>
 			<artifactId>abac-access-control</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

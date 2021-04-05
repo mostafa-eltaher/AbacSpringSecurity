@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.gringostar.abac.security.spring.autoconfigure.AbacAutoConfiguration
+com.github.gringostar.abac.security.spring.autoconfigure.AbacAutoConfiguration
