@@ -13,7 +13,7 @@
 		<appender-ref ref="STDOUT" />
 	</logger>
 	
-	<logger name="com.gringostar.abac" level="debug" additivity="false">
+	<logger name="com.github.gringostar.abac" level="debug" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
 
