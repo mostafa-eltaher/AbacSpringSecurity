@@ -1,0 +1,34 @@
+name: Deploy
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 15
+          server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
+          server-username: OSSRH_USERNAME # env variable for username in deploy
+          server-password: OSSRH_TOKEN # env variable for token in deploy
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Value of the GPG private key to import
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE # env variable for GPG private key passphrase
+      - name: Configure Git user
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+      - name: Publish JAR
+        run: mvn deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          

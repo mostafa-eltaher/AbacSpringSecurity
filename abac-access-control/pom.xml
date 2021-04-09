@@ -1,54 +1,56 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>abac-access-control</artifactId>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>abac-access-control</artifactId>
 
-	<name>attribute-based-acccess-control</name>
-	<url>https://github.com/gringostar/abac-spring-security</url>
+    <name>attribute-based-acccess-control</name>
+    <description>Spring boot plugin for enabling Attribute based access control</description>
+    <url>https://github.com/gringostar/abac-spring-security</url>
 
-	<packaging>jar</packaging>
-	<parent>
-		<groupId>com.github.gringostar</groupId>
-		<artifactId>abac-spring-parent</artifactId>
-		<version>0.0.3-SNAPSHOT</version>
-	</parent>
+    <packaging>jar</packaging>
+    <parent>
+        <groupId>com.github.gringostar</groupId>
+        <artifactId>abac-spring-parent</artifactId>
+        <version>0.0.3-SNAPSHOT</version>
+    </parent>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.annotation</groupId>
-			<artifactId>javax.annotation-api</artifactId>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>deploy</phase>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
