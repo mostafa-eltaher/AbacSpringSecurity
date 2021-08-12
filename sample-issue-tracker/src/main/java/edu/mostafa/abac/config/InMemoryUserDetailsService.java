@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import edu.mostafa.abac.web.model.Project;
@@ -18,7 +18,7 @@ import edu.mostafa.abac.web.model.ProjectUser;
 import edu.mostafa.abac.web.model.UserRole;
 import edu.mostafa.abac.web.services.UserService;
 
-@Component
+@Service
 public class InMemoryUserDetailsService implements UserDetailsService, UserService {
 	private Map<String, ProjectSecurityUser> users = new HashMap<>();
 	
