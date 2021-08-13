@@ -6,12 +6,12 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import edu.mostafa.abac.web.model.Project;
 import edu.mostafa.abac.web.services.ProjectService;
 
-@Component
+@Service
 public class InMemoryProjectService implements ProjectService {
 	private static final Logger logger = LoggerFactory.getLogger(InMemoryProjectService.class);
 	
