@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import edu.mostafa.abac.web.model.Issue;
 import edu.mostafa.abac.web.model.IssueStatus;
 import edu.mostafa.abac.web.model.Project;
 import edu.mostafa.abac.web.services.IssueService;
 
-@Component
+@Service
 public class InMemoryIssueService implements IssueService {
 	private final HashMap<Integer, List<Issue>> issuesByProjectId = new HashMap<>();
 	private final HashMap<Integer, Issue> issuesById = new HashMap<>();
